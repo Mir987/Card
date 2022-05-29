@@ -1,0 +1,223 @@
+body{
+  background: #D8D8D8;
+}
+
+body, p, h1, h6{
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #464646;
+}
+
+h1{
+  font-size: 64px;
+  font-weight: 100;
+  padding: 16px 0 16px 0;
+}
+
+h6{
+  font-size: 32px;
+  font-weight: 100;
+  padding: 8px 0 8px 0;
+}
+
+p{
+  font-size: 28px;
+  font-weight: 100;
+  padding: 8px 0 8px 0;
+}
+
+.box{
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.box:last-of-type{
+  padding-bottom: 80px;
+}
+
+.head{
+  padding: 24px 100px 24px 100px;
+}
+
+.todemo{
+  float: right;
+  background: rgb(77,190,211);
+  background: linear-gradient(180deg, rgba(77,190,211,1) 0%, rgba(0,126,165,1) 100%);
+  padding: 12px 40px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.todemo:hover{
+  background: linear-gradient(180deg, rgba(0,126,165,1) 0%, rgba(77,190,211,1) 100%);
+}
+
+.logo{
+  width: 80px;
+}
+
+.cardbox{
+  background: rgb(121,196,207);
+  background: linear-gradient(180deg, rgba(121,196,207,1) 0%, rgba(139,224,236,1) 3%, rgba(227,249,255,1) 50%, rgba(255,255,255,1) 50%);
+
+  padding-top: 48px;
+}
+
+.spritebox{
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.fake{
+  width: 100%;
+  display: block;
+}
+
+.spritebox2{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("/SPRITE_.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.smallbox{
+  max-width: 812px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 576px) {
+  h1{
+    font-size: 40px;
+  }
+  h6{
+    font-size: 28px;
+  }
+  p{
+    font-size: 23px;
+  }
+  .head{
+    padding: 16px 20px 16px 20px;
+  }
+  .logo{
+    width: 42px;
+  }
+  .spritebox{
+    width: 100%;
+    height: 100%;
+  }
+  .smallbox{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .todemo{
+    padding: 7px 20px;
+    margin-top: 7px;
+  }
+}
+
+/* Demo 2 */
+
+.playbox{
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  position: relative;
+  padding-bottom: 80px;
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+.shadow{
+  width: 50%;
+  height: 112px;
+  background: #000;
+  filter: blur(20px);
+  opacity: 0.5;
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
+  /*animation: shadow-animation 1s ease-in-out 0s infinite alternate;*/
+}
+
+.card_glare{
+  margin: 0 auto;
+  transform-origin: top center;
+  overflow: hidden;
+  /*animation: cardglare-animation 1s ease-in-out 0s infinite alternate;*/
+  transition: all 0.3s ease-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card{
+  max-width: 466px;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.glare{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: #fff;
+  filter: blur(70px);
+  opacity: 0.8;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  /*animation: glare-animation 1s ease-in-out 0s infinite alternate;*/
+}
+
+@keyframes cardglare-animation {
+  from {transform: rotateX(75deg)}
+  to {transform: rotateX(0deg)}
+}
+
+@keyframes shadow-animation {
+  from {transform: rotateX(80deg) translateX(-50%); bottom: 40%; width: 70%; opacity: 0.1}
+  to {transform: rotateX(0deg) translateX(-50%); bottom: 15%; width: 40%; opacity: 0.5}
+}
+
+@keyframes glare-animation {
+  from {transform: translateX(-50%) translateY(100%); width: 60%; height: 300%}
+  to {transform: translateX(-50%) translateY(50%); width: 30%; height: 30%;}
+}
+
+@media only screen and (max-width: 576px) {
+  .playbox{
+    width: 100%;
+    padding-bottom: 40px;
+    padding-top: 10px;
+  }
+  .card{
+    width: 70%;
+  }
+  .glare{
+    width: 140px;
+    height: 140px;
+    opacity: 1;
+  }
+}
