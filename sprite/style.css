@@ -40,7 +40,13 @@ p{
 }
 
 .head{
-  padding: 24px 100px 24px 100px;
+  background: #fff;
+  position: fixed;
+  z-index: 9999;
+  width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 5px 9px -5px rgba(0, 0, 0, 0.35);
 }
 
 .todemo{
@@ -51,7 +57,8 @@ p{
   border-radius: 6px;
   text-decoration: none;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-right: 100px;
 }
 
 .todemo:hover{
@@ -60,13 +67,14 @@ p{
 
 .logo{
   width: 80px;
+  padding: 24px 0 24px 100px;
 }
 
 .cardbox{
   background: rgb(121,196,207);
-  background: linear-gradient(180deg, rgba(121,196,207,1) 0%, rgba(139,224,236,1) 3%, rgba(227,249,255,1) 50%, rgba(255,255,255,1) 50%);
-
-  padding-top: 48px;
+  background: linear-gradient(180deg, rgba(60,202,218,1) 0%, rgba(227,249,255,1) 63%, rgba(255,255,255,1) 63%);
+  /*padding-top: 48px;*/
+  padding-top: 191px;
 }
 
 .spritebox{
@@ -85,7 +93,7 @@ p{
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: url("/SPRITE_.png");
+  background-image: url("/sprite/assets/SPRITE_.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -109,10 +117,15 @@ p{
     font-size: 23px;
   }
   .head{
-    padding: 16px 20px 16px 20px;
+    /*padding: 16px 20px 16px 20px;*/
+    width: 100%;
+  }
+  .cardbox{
+    padding-top: 132px;
   }
   .logo{
     width: 42px;
+    padding: 16px 0 16px 20px;
   }
   .spritebox{
     width: 100%;
@@ -124,11 +137,16 @@ p{
   }
   .todemo{
     padding: 7px 20px;
-    margin-top: 7px;
+    margin-top: 23px;
+    margin-right: 20px;
   }
 }
 
 /* Demo 2 */
+
+.clearfix{
+  clear: both;
+}
 
 .playbox{
   max-width: 720px;
@@ -140,6 +158,7 @@ p{
   padding-bottom: 80px;
   padding-top: 40px;
   overflow: hidden;
+  z-index: 9998;
 }
 
 .shadow{
@@ -153,6 +172,7 @@ p{
   bottom: 40px;
   transform: translateX(-50%);
   transform-style: preserve-3d;
+  transition: all 0.3s ease-out;
   /*animation: shadow-animation 1s ease-in-out 0s infinite alternate;*/
 }
 
@@ -214,6 +234,7 @@ p{
   }
   .card{
     width: 70%;
+    border-radius: 12px;
   }
   .glare{
     width: 140px;
